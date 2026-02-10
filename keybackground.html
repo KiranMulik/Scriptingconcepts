@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Keypress Color Changer</title>
+   
+</head>
+<body>
+
+    <div class="info">
+        <h1>Press any key!</h1>
+        <p>Current Key: <kbd id="keyName">None</kbd></p>
+        <p>Hex Code: <span id="hexCode">#FFFFFF</span></p>
+    </div>
+
+    <script>
+        window.addEventListener('keydown', function(event) {
+           
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            
+            document.body.style.backgroundColor = randomColor;
+            
+            document.getElementById('keyName').innerText = event.key === " " ? "Space" : event.key;
+            document.getElementById('hexCode').innerText = randomColor.toUpperCase();
+        });
+    </script>
+
+</body>
+</html>

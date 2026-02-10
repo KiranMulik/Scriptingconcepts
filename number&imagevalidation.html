@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number and Image Validation</title>
+</head>
+<body>
+
+<h2>Number and Image Validation</h2>
+
+<form onsubmit="return validateForm()">
+
+    <input type="text" id="number" placeholder="Enter Number"><br><br>
+    <input type="file" id="image"><br><br>
+
+    <button type="submit">Submit</button>
+    <p id="msg"></p>
+
+</form>
+
+<script>
+function validateForm() {
+    let number = document.getElementById("number").value;
+    let image = document.getElementById("image").value;
+    let msg = document.getElementById("msg");
+    let imgPattern = /(\.jpg|\.jpeg|\.png|\.gif)$/i;
+
+    if (number === "") {
+        msg.innerHTML = "Number must not be empty";
+        return false;
+    }
+    if (!/^[0-9]+$/.test(number)) {
+        msg.innerHTML = "Only digits allowed";
+        return false;
+    }
+    if (image === "") {
+        msg.innerHTML = "Please select an image";
+        return false;
+    }
+    if (!imgPattern.test(image)) {
+        msg.innerHTML = "Only image files allowed";
+        return false;
+    }
+
+    msg.innerHTML = "Validation Successful";
+    return true;
+}
+</script>
+
+</body>
+</html>

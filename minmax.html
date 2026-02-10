@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Number Analysis</h2>
+
+    <script>
+        let a = 15, b = 42, c = 7;
+        let max, min, median;
+
+        // Maximum
+        if (a >= b && a >= c) max = a;
+        else if (b >= a && b >= c) max = b;
+        else max = c;
+
+        // Minimum
+        if (a <= b && a <= c) min = a;
+        else if (b <= a && b <= c) min = b;
+        else min = c;
+
+        //  Median
+        if ((a > b && a < c) || (a > c && a < b)) median = a;
+        else if ((b > a && b < c) || (b > c && b < a)) median = b;
+        else median = c;
+
+        // Displaying Results
+        document.write("Numbers: " + a + ", " + b + ", " + c + "<br><br>");
+        document.write("<b>Maximum:</b> " + max + "<br>");
+        document.write("<b>Minimum:</b> " + min + "<br>");
+        document.write("<b>Median:</b> " + median);
+
+        console.log("Max:", max, "Min:", min, "Median:", median);
+    </script>
+
+</body>
+</html>

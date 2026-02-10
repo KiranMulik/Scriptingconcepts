@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Input Events</title>
+   
+<body>
+
+    <div class="container">
+        <label for="username">Username:</label>
+        <input type="text" id="username" placeholder="Enter your name...">
+        
+        <div id="status-msg"></div>
+    </div>
+
+    <script>
+        const inputField = document.getElementById('username');
+        const statusMsg = document.getElementById('status-msg');
+        inputField.addEventListener('focus', function() {
+            statusMsg.innerText = "You are now typing...";
+            statusMsg.style.color = "#007BFF";
+        });
+        inputField.addEventListener('blur', function() {
+            statusMsg.innerText = "Field left. Changes saved.";
+            statusMsg.style.color = "#28a745";
+        });
+    </script>
+
+</body>
+</html>

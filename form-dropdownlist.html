@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dropdown Change Event</title>
+    
+</head>
+<body>
+
+    <h2>Pick your favorite fruit:</h2>
+
+    <select id="fruitSelect">
+        <option value="" disabled selected>Choose a fruit...</option>
+        <option value="Apple">Apple</option>
+        <option value="Banana">Banana</option>
+        <option value="Orange">Orange</option>
+        <option value="Mango">Mango</option>
+    </select>
+
+    <script>
+        const dropdown = document.getElementById('fruitSelect');
+
+        dropdown.addEventListener('change', function() {
+            const selectedValue = dropdown.value;
+            
+            alert("You selected: " + selectedValue);
+        });
+    </script>
+
+</body>
+</html>

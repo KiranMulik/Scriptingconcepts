@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Character Counter</title>
+</head>
+<body>
+
+    <h2>Character Counter</h2>
+    <p>Start typing below to see the count update:</p>
+
+    <textarea id="textInput" placeholder="Type something here..."></textarea>
+    
+    <div class="counter-container">
+        Characters: <span id="charCount">0</span>
+    </div>
+
+    <script>
+        const textInput = document.getElementById('textInput');
+        const charCount = document.getElementById('charCount');
+
+
+        textInput.addEventListener('input', function() {
+      
+            const length = textInput.value.length;
+           
+            charCount.innerText = length;
+        });
+    </script>
+
+</body>
+</html>

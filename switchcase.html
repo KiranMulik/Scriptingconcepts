@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <h2>Day of the Week Finder</h2>
+
+    <script>
+        let dayNum = 3;
+        let dayName;
+
+        switch (dayNum) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            case 7:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Invalid Day Number";
+        }
+
+        document.write("Day " + dayNum + " is: " + dayName);
+        console.log("Output displayed: " + dayName);
+    </script>
+
+</body>
+</html>

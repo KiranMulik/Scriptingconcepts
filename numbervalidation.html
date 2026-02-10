@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Validation</title>
+</head>
+<body>
+
+<h2>Number Validation</h2>
+
+<input type="text" id="number" placeholder="Enter Number">
+<button onclick="validateNumber()">Validate</button>
+
+<p id="msg"></p>
+
+<script>
+function validateNumber() {
+    let num = document.getElementById("number").value;
+    let msg = document.getElementById("msg");
+
+    if (num === "") {
+        msg.innerHTML = "Field must not be empty";
+    } else if (!/^[0-9]+$/.test(num)) {
+        msg.innerHTML = "Only numbers are allowed";
+    } else {
+        msg.innerHTML = "Valid Number";
+    }
+}
+</script>
+
+</body>
+</html>

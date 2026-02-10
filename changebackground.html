@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Click to Change Color</title>
+</head>
+<body>
+
+    <h1>Click anywhere to change the color!</h1>
+
+    <script>
+        // We "listen" for a click on the entire document
+        document.addEventListener('click', function() {
+            
+            // 1. Generate a random color
+            // 16777215 is the total number of possible hex colors
+            const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
+            
+            // 2. Apply it to the background
+            document.body.style.backgroundColor = randomColor;
+            
+            // 3. Bonus: Change text color so it stays readable
+            // (Optional logic to make text white if background is dark)
+            console.log("New color: " + randomColor);
+        });
+    </script>
+
+</body>
+</html>

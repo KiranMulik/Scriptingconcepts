@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hover Message</title>
+</head>
+<body>
+
+    <button class="my-button" id="btn"> Over Me!</button>
+    
+    <div id="message-area"></div>
+
+    <script>
+        const btn = document.getElementById('btn');
+        const display = document.getElementById('message-area');
+
+        btn.onmouseover = function() {
+            display.innerText = "Hello! .";
+        };
+
+        btn.onmouseout = function() {
+            display.innerText = "";
+        };
+    </script>
+
+</body>
+</html>

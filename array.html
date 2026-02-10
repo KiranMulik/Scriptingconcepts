@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Array Method</h2>
+    <p>Open the <b>Console </b> to see all transformations!</p>
+
+    <script>
+        let size = parseInt(prompt("How many numbers would you like to enter?"));
+        let numbers = [];
+
+        for (let i = 0; i < size; i++) {
+            let val = parseInt(prompt("Enter number " + (i + 1) + ":"));
+            numbers.push(val);
+        }
+
+        document.write("Starting Array:" + numbers +"<br>");
+
+        // LENGTH
+        document.write("Array Length:" + numbers.length + "<br>");
+
+        // POP
+        let removedLast = numbers.pop();
+        document.write("After pop (removed " + removedLast + "):", numbers);
+
+        // UNSHIFT
+        numbers.unshift(999);
+        document.write("After unshift :" + numbers"<br>");
+
+        // SHIFT 
+        let removedFirst = numbers.shift();
+        document.write("After shift (removed " + removedFirst + "):", numbers"<br>");
+
+        // INDEXOF
+        let search = parseInt(prompt("Enter a number to find its position:"));
+        let index = numbers.indexOf(search);
+        document.write("Index of " + search + ":", index"<br>");
+
+        // CONCAT
+        let extraNumbers = [100, 200];
+        let combined = numbers.concat(extraNumbers);
+        document.write("After concat with [100, 200]:", combined"<br>");
+
+        // JOIN
+        let joinedString = combined.join(" -> ");
+        document.write("<h3>Final Joined Path: " + joinedString + "</h3>""<br>");
+
+        //  FOREACH
+        console.log("--- Printing Each Element via forEach ---");
+        combined.forEach(function(item, i) {
+            document.write("Position " + i + " contains: " + item"<br>");
+        });
+
+    </script>
+</body>
+</html>

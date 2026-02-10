@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Area Using Class</title>
+</head>
+<body>
+
+  <h2>Area Calculation</h2>
+  Length: <input type="number" id="length">
+  Width: <input type="number" id="width">
+  <button onclick="calculateArea()">Calculate</button>
+  <p id="result"></p>
+
+  <script>
+    class Area {
+      constructor(length, width) {
+        this.length = length;
+        this.width = width;
+      }
+
+      getArea() {
+        return this.length * this.width;
+      }
+    }
+
+    function calculateArea() {
+      let l = Number(document.getElementById("length").value);
+      let w = Number(document.getElementById("width").value);
+      let rectangle = new Area(l, w);
+      document.getElementById("result").innerText = "Area: " + rectangle.getArea();
+    }
+  </script>
+
+</body>
+</html>

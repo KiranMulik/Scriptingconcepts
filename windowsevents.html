@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Window Events</title>
+  
+</head>
+<body>
+
+    <div class="header">
+        <h2>Window Event Monitor</h2>
+        <p>1. <b>Close:</b> Try to close or refresh this tab.</p>
+        <p>2. <b>Resize:</b> Current Width: <span id="width">0</span>px | Height: <span id="height">0</span>px</p>
+        <p>3. <b>Scroll:</b> Scroll down to see the alert!</p>
+    </div>
+
+    <div id="scrollMsg" class="scroll-indicator">You are scrolling!</div>
+
+    <script>
+        // 1. WARNING BEFORE CLOSING (beforeunload)
+        window.addEventListener('beforeunload', function (e) {
+            e.preventDefault();
+            e.returnValue = ''; 
+        });
+
+        // 2. DISPLAY WINDOW SIZE (resize)
+        function updateSize() {
+            document.getElementById('width').innerText = window.innerWidth;
+            document.getElementById('height').innerText = window.innerHeight;
+        }
+        
+        window.addEventListener('resize', updateSize);
+        updateSize();
+
+        // 3. DISPLAY MESSAGE ON SCROLL (scroll)
+        const scrollMsg = document.getElementById('scrollMsg');
+        let scrollTimer;
+
+        window.addEventListener('scroll', function() {
+            scrollMsg.style.display = 'block';
+			
+            clearTimeout(scrollTimer);
+
+            scrollTimer = setTimeout(() => {
+                scrollMsg.style.display = 'none';
+            }, 1000);
+        });
+    </script>
+
+</body>
+</html>

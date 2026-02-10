@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Double Click Alert</title>
+</head>
+<body>
+
+    <div class="click-box" id="myTarget">
+        Double-Click Me!
+    </div>
+
+    <script>
+     
+        const target = document.getElementById('myTarget');
+
+
+        target.addEventListener('dblclick', function() {
+            alert("Success! You detected a double-click.");
+        });
+    </script>
+
+</body>
+</html>

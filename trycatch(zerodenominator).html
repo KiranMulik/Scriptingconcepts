@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+   
+    <title>Exception Handling Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 40px;
+        }
+        input {
+            margin: 5px 0;
+        }
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Division with Exception Handling</h2>
+
+    <label>Numerator:</label><br>
+    <input type="number" id="num1"><br>
+
+    <label>Denominator:</label><br>
+    <input type="number" id="num2"><br><br>
+
+    <button onclick="divideNumbers()">Divide</button>
+
+    <div id="result"></div>
+
+    <script>
+        function divideNumbers() {
+            let resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = "";
+
+            try {
+                let a = parseFloat(document.getElementById("num1").value);
+                let b = parseFloat(document.getElementById("num2").value);
+
+                if (isNaN(a) || isNaN(b)) {
+                    throw new Error("Please enter valid numbers.");
+                }
+
+                if (b === 0) {
+                    throw new Error("Division by zero is not allowed.");
+                }
+
+                let result = a / b;
+                resultDiv.innerHTML = "Result: " + result;
+            }
+            catch (error) {
+                resultDiv.innerHTML = "Error: " + error.message;
+            }
+            finally {
+                console.log("Division operation attempted.");
+            }
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>Age Validation</title>
+</head>
+<body>
+
+    <h2>Age Validation using Exception Handling</h2>
+
+    <label>Enter your age:</label><br>
+    <input type="number" id="age"><br><br>
+
+    <button onclick="checkAge()">Submit</button>
+
+    <p id="message"></p>
+
+    <script>
+        function checkAge() {
+            let msg = document.getElementById("message");
+            msg.innerHTML = "";
+
+            try {
+                let age = parseInt(document.getElementById("age").value);
+
+                if (isNaN(age)) {
+                    throw new Error("Please enter a valid age.");
+                }
+
+                if (age < 18) {
+                    throw new Error("Age must be 18 or above.");
+                }
+
+                msg.innerHTML = "Access granted. You are eligible.";
+            }
+            catch (error) {
+                msg.innerHTML = "Error: " + error.message;
+            }
+            finally {
+                console.log("Age verification completed.");
+            }
+        }
+    </script>
+
+</body>
+</html>

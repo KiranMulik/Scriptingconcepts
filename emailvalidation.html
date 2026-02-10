@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Email Validation</title>
+</head>
+<body>
+
+<h2>Email Validation</h2>
+
+<form onsubmit="return validateEmail()">
+    <input type="text" id="email" placeholder="Enter Email">
+    <button type="submit">Submit</button>
+    <p id="msg"></p>
+</form>
+
+<script>
+function validateEmail() {
+    let email = document.getElementById("email").value;
+    let msg = document.getElementById("msg");
+    let pattern = /^[a-zA-Z0-9._]+@[a-zA-Z]+\.[a-zA-Z]{2,}$/;
+
+    if (email === "") {
+        msg.innerHTML = "Email must not be empty";
+        return false;
+    } else if (!pattern.test(email)) {
+        msg.innerHTML = "Invalid Email Format";
+        return false;
+    } else {
+        msg.innerHTML = "Valid Email";
+        return true;
+    }
+}
+</script>
+
+</body>
+</html>
